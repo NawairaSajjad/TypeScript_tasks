@@ -1,0 +1,29 @@
+
+// Shrinking Guest List: You just found out that your new dinner table won’t arrive in time for the dinner, and you have space for only two guests.
+
+// • Start with your program from Exercise 16. Add a new line that prints a message saying that you can invite only two people for dinner.
+
+// • Remove guests from your list one at a time until only two names remain in your list. Each time you pop a name from your list, print
+// a message to that person letting them know you’re sorry you can’t invite them to dinner.
+
+// • Print a message to each of the two people still on your list, letting them know they’re still invited.
+
+// • Remove the last two names from your list, so you have an empty list. Print your list to make sure you actually have an empty list at the end
+// of your program.
+
+
+let guestInvited: string[] = ["daniel","philips","henry","finch"]
+guestInvited.forEach(invitedPeople => {
+    console.log(`Dear ${invitedPeople}, would you like to join me for a dinner`)
+}) 
+console.log("we haven't much space to invite them all , we can invite only two guests.")
+
+while(guestInvited.length>2){
+    let guestRemoved = guestInvited.pop();
+    console.log(`Sorry ${guestRemoved} i cant invite you to dinner `)
+}
+guestInvited.forEach(guests=>{
+    console.log(`${guests} your are still invited `)
+})
+guestInvited.splice(0,guestInvited.length)
+console.log(guestInvited)
